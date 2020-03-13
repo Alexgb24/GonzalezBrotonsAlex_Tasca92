@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<!-- Alex González -->
+<!-- Llenguatge de marques -->
+<!-- Tasca 9.2 -->
+
+<html>
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Buscador Flickr</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Importar archivo script de la carpeta Script -->
+    <script src="Script/script.js"></script>
+    </head>
+
+    <body class="bg-info">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-6">
+                <!-- Título -->
+                <h1>Busca imágenes en Flickr</h1>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <!-- Formulario -->>
+            <div class="col">
+                <!-- Input recoje las etiquetas -->
+                <label for="etiquetas"> Etiquetas de la publicación: (Separadas por espacios)</label>
+                <input id="etiquetas" type="text" class="form-control" onkeydown="Enter(event)" />
+                <br>
+                <!-- Select elige cuantas etiquetas deben coincidir -->
+                <label for="rangoEtiquetas">Mostrar publicaciones con todas las etiquetas?</label>
+                <select name="rangoEtiquetas" id="rangoEtiquetas" class="custom-select">
+                    <option value="all">Todas las etiquetas</option>
+                    <option value="any">Algunas etiquetas</option>
+                </select>
+                <br>
+                <br>
+                <!-- Ejecuta la función que hace la petición ajax -->
+                <button type="button" class="btn btn-light" onclick="cargarTabla()">Buscar</button>
+                <!-- Llama a la función que limpia formulario -->
+                <button type="button" class="btn btn-dark" onclick="limpiar()">Limpiar</button>
+            </div>
+            <div class="col"></div>
+        </div>
+        <br>
+        <div>
+            <!-- Inicio tabla -->
+            <table class="table table-sm table-light table-bordered">
+                <thead>
+                    <tr class="bg-success">
+                        <!-- Contenido de la tabla -->
+                        <th scope="col">Título</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Fecha de publicación</th>
+                        <th scope="">Autor</th>
+                        <th scope="col">Etiquetas</th>
+                        <th scope="col">Enlace hacia la página</th>
+                    </tr>
+                </thead>
+                <tbody id="cTabla"></tbody>
+            </table>
+        </div>
+     <!-- Bootstrap -->
+     <div align="center"><img src=></div>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+
+</html>
